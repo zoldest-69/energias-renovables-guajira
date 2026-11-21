@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EnergíaGuajira · Energías renovables y tecnología sostenible</title>
+<meta name="description" content="Propuesta de energía solar y eólica para comunidades de La Guajira. Proyecto final de Introducción a la Ingeniería de Sistemas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="#inicio" class="brand">EnergíaGuajira</a>
+  <button id="menuBtn" class="menu-btn" aria-label="Abrir menú" aria-expanded="false">Menú</button>
+  <nav id="nav" class="nav">
+    <a href="#problema">Problema</a>
+    <a href="#innovacion">Innovación</a>
+    <a href="#sistema">Enfoque sistémico</a>
+    <a href="#galeria">Galería</a>
+    <a href="#metodo">Método científico</a>
+    <a href="#industria">Industria 4.0</a>
+    <a href="#equipo">Equipo</a>
+  </nav>
+</header>
+
+<main>
+<!-- HOME -->
+<section id="inicio" class="hero">
+  <div class="hero-text">
+    <p class="kicker">Introducción a la Ingeniería de Sistemas · Universidad de La Guajira</p>
+    <h1>Sol y viento para llevar energía limpia a La Guajira</h1>
+    <p>EnergíaGuajira es una propuesta de tecnología sostenible: una herramienta digital que ayuda a las familias y comunidades a calcular cuánta energía necesitan y qué sistema solar les convendría, aprovechando los recursos naturales de la región.</p>
+    <p><strong>Objetivo:</strong> proponer una solución digital que apoye el acceso a energía limpia y confiable en comunidades de La Guajira.</p>
+    <a class="btn" href="#calculadora">Probar la calculadora</a>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <svg viewBox="0 0 300 300" role="img">
+      <circle class="sun" cx="215" cy="85" r="48"/>
+      <rect x="146" y="150" width="8" height="140" rx="4" fill="#cfe3ea"/>
+      <g class="rotor" transform-origin="150 150">
+        <path d="M150 150 L140 60 Q150 40 160 60 Z" fill="#fff"/>
+        <path d="M150 150 L228 195 Q224 220 205 208 Z" fill="#fff"/>
+        <path d="M150 150 L72 195 Q76 220 95 208 Z" fill="#fff"/>
+      </g>
+      <circle cx="150" cy="150" r="9" fill="#FFB400"/>
+      <rect x="20" y="268" width="260" height="8" rx="4" fill="#1b5e75"/>
+    </svg>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section id="problema" class="section">
+  <h2>Análisis del problema</h2>
+  <div class="grid2">
+    <div>
+      <h3>Situación identificada</h3>
+      <p>La Guajira tiene uno de los mejores potenciales de sol y viento del país, pero muchas comunidades rurales, en especial rancherías wayuu, tienen acceso limitado a energía eléctrica o dependen de generadores a diésel, costosos y contaminantes. Además, las familias no cuentan con herramientas sencillas para saber cuánta energía usan ni qué sistema solar necesitarían.</p>
+      <h3>Pregunta orientadora</h3>
+      <p class="quote">¿Cómo puede una herramienta digital ayudar a las comunidades de La Guajira a dimensionar y adoptar energía solar para cubrir sus necesidades básicas?</p>
+      <h3>Población afectada y beneficiada</h3>
+      <p>Familias de zonas rurales, comunidades wayuu, escuelas y puestos de salud rurales, y pequeños negocios locales.</p>
+      <h3>Importancia de la solución</h3>
+      <p>Energía limpia permite refrigerar alimentos, conservar el agua, estudiar de noche y cargar dispositivos, y reduce el gasto en combustible y la contaminación.</p>
+    </div>
+    <div>
+      <h3>Árbol de problemas</h3>
+      <div class="tree">
+        <div class="tree-box effects"><strong>Efectos</strong><span>Alimentos que se dañan sin refrigeración</span><span>Gasto alto en combustible</span><span>Menos oportunidades de estudio y trabajo</span></div>
+        <div class="tree-box core"><strong>Problema central</strong><span>Acceso limitado a energía eléctrica confiable y limpia</span></div>
+        <div class="tree-box causes"><strong>Causas</strong><span>Viviendas dispersas y lejanas de la red</span><span>Costo inicial de las soluciones</span><span>Poca información técnica accesible</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INNOVACION -->
+<section id="innovacion" class="section alt">
+  <h2>Innovación: la solución tecnológica</h2>
+  <div class="grid3">
+    <article class="card"><h3>Qué es</h3><p>Una plataforma web con una calculadora de energía solar para el hogar, que estima el consumo y sugiere el tamaño del sistema.</p></article>
+    <article class="card"><h3>Cómo funciona</h3><p>La persona marca los aparatos que usa y las horas diarias. El sistema calcula el consumo y estima paneles, baterías y emisiones de CO₂ evitadas.</p></article>
+    <article class="card"><h3>Qué lo hace innovador</h3><p>Traduce conceptos técnicos a resultados claros, está pensada para el celular y toma como base el potencial solar de La Guajira.</p></article>
+  </div>
+
+  <div id="calculadora" class="tool">
+    <h3>Calculadora solar para el hogar (elemento interactivo)</h3>
+    <p class="note">Marca los aparatos que usas y ajusta las horas por día.</p>
+    <div id="appliances" class="appliances"></div>
+    <div class="results" aria-live="polite">
+      <div class="res"><span id="rKwh">0</span><small>kWh por día</small></div>
+      <div class="res"><span id="rPan">0</span><small>paneles de 400 W</small></div>
+      <div class="res"><span id="rBat">0</span><small>kWh de batería</small></div>
+      <div class="res"><span id="rCo2">0</span><small>kg CO₂ evitados al año</small></div>
+    </div>
+    <p class="note">Supuestos aproximados: 5,5 horas de sol pico al día, eficiencia del sistema de 75 %, batería para un día de autonomía con 80 % de descarga útil y un generador diésel de referencia de 0,7 kg CO₂ por kWh. Es una estimación educativa, no un diseño técnico final.</p>
+  </div>
+</section>
+
+<!-- ENFOQUE SISTEMICO -->
+<section id="sistema" class="section">
+  <h2>Enfoque sistémico</h2>
+  <p>La solución se modela como un sistema con entradas, procesos y salidas que interactúa con su entorno.</p>
+  <div class="flow">
+    <div class="flow-col"><h3>Entradas</h3><span>Aparatos y horas de uso</span><span>Radiación solar de la zona</span><span>Datos del panel y la batería</span></div>
+    <div class="arrow" aria-hidden="true">➜</div>
+    <div class="flow-col main"><h3>Procesos</h3><span>Cálculo del consumo diario</span><span>Dimensionamiento del sistema solar</span><span>Estimación del impacto ambiental</span></div>
+    <div class="arrow" aria-hidden="true">➜</div>
+    <div class="flow-col"><h3>Salidas</h3><span>Consumo en kWh por día</span><span>Número de paneles y batería</span><span>CO₂ evitado al año</span></div>
+  </div>
+  <div class="grid2 small-gap">
+    <article class="card"><h3>Componentes del sistema</h3><p>Interfaz web, módulo de cálculo, base de datos de aparatos y supuestos técnicos, y módulo de resultados e infografía.</p></article>
+    <article class="card"><h3>Interacción con el entorno</h3><p>Comunidades y familias, empresas de energía, autoridades locales, el clima de la región y normas del sector eléctrico. La retroalimentación de los usuarios mejora los supuestos.</p></article>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria" class="section alt">
+  <h2>Galería multimedia</h2>
+  <div class="gallery">
+    <figure class="shot"><div class="ph"><span>Parque eólico</span><img src="eolico.jpg" alt="Aerogeneradores en La Guajira" loading="lazy" onerror="this.style.display='none'"></div><figcaption>Energía eólica. Imagen: [escribe aquí la fuente]</figcaption></figure>
+    <figure class="shot"><div class="ph"><span>Paneles solares</span><img src="solar.jpg" alt="Paneles solares" loading="lazy" onerror="this.style.display='none'"></div><figcaption>Energía solar. Imagen: [escribe aquí la fuente]</figcaption></figure>
+    <figure class="shot"><div class="ph"><span>Comunidad wayuu</span><img src="comunidad.jpg" alt="Ranchería wayuu en La Guajira" loading="lazy" onerror="this.style.display='none'"></div><figcaption>Ranchería wayuu. Imagen: [escribe aquí la fuente]</figcaption></figure>
+    <figure class="shot"><div class="ph"><span>Tecnología sostenible</span><img src="tecnologia.jpg" alt="Tecnología sostenible" loading="lazy" onerror="this.style.display='none'"></div><figcaption>Tecnología sostenible. Imagen: [escribe aquí la fuente]</figcaption></figure>
+  </div>
+  <div class="grid2">
+    <div class="video">
+      <h3>Video</h3>
+      <!-- Pega aquí el código "Insertar" de YouTube y borra el recuadro de abajo:
+      <iframe src="https://www.youtube.com/embed/ID_DEL_VIDEO" title="Video" allowfullscreen></iframe> -->
+      <div class="ph video-ph"><span>Aquí va tu video (YouTube, propio o externo)</span></div>
+    </div>
+    <div>
+      <h3>Infografía: ¿en qué se va la energía de tu hogar?</h3>
+      <p class="note">Se actualiza con los datos que ingreses en la calculadora.</p>
+      <div class="bars" id="bars"></div>
+    </div>
+  </div>
+</section>
+
+<!-- METODO CIENTIFICO -->
+<section id="metodo" class="section">
+  <h2>Método científico aplicado</h2>
+  <p>Selecciona cada paso para ver cómo se aplicó en este proyecto.</p>
+  <div class="steps" id="steps" role="tablist"></div>
+  <div class="step-body" id="stepBody" aria-live="polite"></div>
+</section>
+
+<!-- INDUSTRIA 4.0 -->
+<section id="industria" class="section alt">
+  <h2>Industria 4.0 en el proyecto</h2>
+  <div class="grid3">
+    <article class="card"><h3>Internet de las Cosas</h3><p>Medidores y sensores inteligentes que registran la producción de los paneles y el consumo real del hogar.</p></article>
+    <article class="card"><h3>Big Data</h3><p>Análisis de datos de radiación, viento y consumo para dimensionar mejor los sistemas en cada zona.</p></article>
+    <article class="card"><h3>Inteligencia Artificial</h3><p>Modelos que predicen la demanda y la generación según el clima, y recomiendan cuándo usar la energía.</p></article>
+    <article class="card"><h3>Computación en la nube</h3><p>Almacenamiento y monitoreo remoto de muchos sistemas desde un solo panel.</p></article>
+    <article class="card"><h3>Robótica y drones</h3><p>Drones que inspeccionan paneles y aerogeneradores en zonas de difícil acceso.</p></article>
+    <article class="card"><h3>Ciberseguridad</h3><p>Protección de los datos de consumo y de los sistemas conectados.</p></article>
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<section id="equipo" class="section">
+  <h2>Equipo y conclusiones</h2>
+  <p><strong>Conclusión:</strong> una herramienta digital sencilla puede ayudar a las comunidades a entender su consumo y a tomar decisiones sobre energía solar. Aplicar el pensamiento sistémico permitió ver la solución como un conjunto de partes conectadas con su entorno.</p>
+  <ul class="team">
+    <li>José Daniel Estrada Ballestas</li>
+    <li>Ángel David Rodríguez García</li>
+    <li>Iván David Brito Meza</li>
+  </ul>
+  <p>Docente: Ing. Mg. Rafael E. Griego Barros · Facultad de Ingeniería · Ingeniería de Sistemas</p>
+</section>
+</main>
+
+<footer class="footer">Proyecto final · Introducción a la Ingeniería de Sistemas · Universidad de La Guajira</footer>
+<script src="js.js"></script>
+</body>
+</html>
