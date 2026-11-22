@@ -114,9 +114,9 @@ const pasos = [
   ['1. Observación', 'Observamos que muchas comunidades rurales de La Guajira tienen acceso limitado a energía eléctrica o dependen de generadores a diésel, aunque la región tiene mucho sol y viento.'],
   ['2. Planteamiento del problema', '¿Cómo puede una herramienta digital ayudar a las comunidades a dimensionar y adoptar energía solar para cubrir sus necesidades básicas?'],
   ['3. Hipótesis', 'Si las familias cuentan con una calculadora que estima su consumo y el tamaño de un sistema solar, entenderán mejor cuánta energía necesitan y verán la energía solar como una opción posible.'],
-  ['4. Experimentación', 'Desarrollamos un prototipo de calculadora solar y lo probamos con 15 personas. Cada una usó la calculadora desde su celular y respondió una encuesta de 8 preguntas sobre su consumo de energía, la facilidad de uso, la claridad de los resultados, el diseño y su interés en la energía solar.'],
-  ['5. Análisis de resultados', 'Ninguna de las 15 personas tenía un sistema solar en casa (13 respondieron que no y 2 que no sabían). Antes de usar la calculadora, 11 de 15 (73 %) no tenía idea de cuánta energía consume su hogar y 4 (27 %) lo sabían más o menos. Después de usarla, 13 de 15 (87 %) dijeron entender mejor el consumo de sus aparatos, aunque solo 4 (27 %) dijeron entenderlo bastante o mucho mejor. La facilidad de uso obtuvo un promedio de 3,3 sobre 5 y la claridad de los resultados, 3,5 sobre 5. El diseño fue lo mejor valorado: 10 de 15 (67 %) lo calificó como atractivo o muy atractivo (promedio de 3,9 sobre 5). Además, 11 de 15 (73 %) consideraría la energía solar para su hogar y 4 (27 %) tal vez; nadie respondió que no.'],
-  ['6. Conclusiones', 'La hipótesis se cumplió en parte: la calculadora ayudó a la mayoría a entender mejor su consumo (13 de 15), pero pocos lo entendieron mucho mejor, y la facilidad de uso y la claridad de los resultados quedaron en un nivel medio. Aun así, nadie descartó la energía solar para su hogar. Como mejora se propone explicar mejor cada resultado y agregar ejemplos para quienes no conocen estos conceptos. Limitaciones: la muestra fue pequeña (15 personas) y todas probaron el sitio desde el celular, por lo que se necesitan más pruebas con otras comunidades.']
+  ['4. Experimentación', 'Desarrollamos un prototipo de calculadora solar y lo probamos en dos rondas, con 35 personas en total.\n\nRonda 1: 15 personas usaron la calculadora desde su celular y respondieron una encuesta de 8 preguntas.\n\nRonda 2: 20 personas (9 de Riohacha, 7 de otros municipios de La Guajira, 1 de zona rural o ranchería y 3 de fuera del departamento) probaron el sitio y respondieron una encuesta de 10 preguntas sobre lo que sabían antes, qué tan claro fue el sitio, la calculadora y los resultados, y qué cambiarían.'],
+  ['5. Análisis de resultados', 'Ronda 1 (15 personas): 11 de 15 (73 %) no tenía idea de cuánta energía consume su hogar. Después de usar la calculadora, 13 de 15 (87 %) dijeron entender mejor su consumo, aunque solo 4 lo entendieron bastante o mucho mejor. La facilidad de uso obtuvo 3,3 sobre 5 y la claridad de los resultados, 3,5 sobre 5. 11 de 15 (73 %) consideraría la energía solar para su hogar y 4 tal vez.\n\nRonda 2 (20 personas): 17 de 20 (85 %) sabía muy poco o nada sobre cuánta energía consumen sus aparatos. Después de probar la calculadora, 16 de 20 (80 %) dijeron tener una mejor idea de su consumo (7 con mucha claridad y 9 un poco), y 4 siguen sin saberlo. La facilidad de uso obtuvo 2,8 sobre 5. En los resultados, 8 de 20 (40 %) entendieron todo, pero 11 (55 %) se confundieron con términos como kWh y CO₂. La infografía ayudó a 15 de 20 (75 %), aunque 5 no notaron que cambiaba. Ante los paneles solares, 9 de 20 (45 %) dijeron que sí los considerarían y 11 (55 %) tal vez, dependiendo del costo; nadie dijo que no.\n\nMejoras que pidieron: explicar kWh con palabras sencillas y su equivalencia en el recibo de luz (8 personas), indicar el costo en pesos (5), agregar un audio o video corto que explique la calculadora, incluso en wayuunaiki (4), y poner la calculadora más arriba y acortar los textos (2).'],
+  ['6. Conclusiones', 'La hipótesis se cumplió en parte: en las dos rondas la mayoría dijo tener una mejor idea de su consumo (13 de 15 y 16 de 20), pero la facilidad de uso (3,3 y 2,8 sobre 5) y la comprensión de términos como kWh y CO₂ quedaron en un nivel medio. Aun así, nadie descartó los paneles solares: la duda principal es el costo.\n\nSegún las encuestas, se propone explicar el kWh con equivalencias al recibo de luz, mostrar un costo aproximado en pesos, agregar un audio o video corto (incluso en wayuunaiki) y subir la calculadora en la página. Limitación: las muestras fueron pequeñas, por lo que se necesitan más pruebas, sobre todo en comunidades rurales.']
 ];
 const contPasos = document.getElementById('steps');
 const cuerpo = document.getElementById('stepBody');
@@ -125,9 +125,12 @@ function mostrarPaso(k) {
   cuerpo.innerHTML = '';
   const h = document.createElement('h3');
   h.textContent = pasos[k][0];
-  const p = document.createElement('p');
-  p.textContent = pasos[k][1];
-  cuerpo.append(h, p);
+  cuerpo.append(h);
+  pasos[k][1].split('\n\n').forEach(t => {
+    const p = document.createElement('p');
+    p.textContent = t;
+    cuerpo.append(p);
+  });
 }
 pasos.forEach((paso, k) => {
   const b = document.createElement('button');
