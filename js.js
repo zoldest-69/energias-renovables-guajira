@@ -38,6 +38,7 @@ const EFICIENCIA = 0.75;    // pérdidas del sistema
 const PANEL_KW = 0.4;       // panel de 400 W
 const DESCARGA_UTIL = 0.8;  // porcentaje utilizable de la batería
 const KG_CO2_KWH = 0.7;     // generador diésel de referencia
+const TARIFA_KWH = 936;      // pesos por kWh (Air-e, noviembre de 2026). Cámbiala si la tarifa cambia.
 
 const cont = document.getElementById('appliances');
 const filas = aparatos.map((a, i) => {
@@ -78,6 +79,9 @@ function calcular() {
   const bateria = kwh / DESCARGA_UTIL;
   const co2 = kwh * 365 * KG_CO2_KWH;
   document.getElementById('rKwh').textContent = kwh.toFixed(2).replace('.', ',');
+  const redondear = v => Math.round(v / 100) * 100;
+  document.getElementById('rMes').textContent = '$' + redondear(kwh * 30 * TARIFA_KWH).toLocaleString('es-CO');
+  document.getElementById('rAnio').textContent = '$' + redondear(kwh * 365 * TARIFA_KWH).toLocaleString('es-CO');
   document.getElementById('rPan').textContent = paneles;
   document.getElementById('rBat').textContent = bateria.toFixed(1).replace('.', ',');
   document.getElementById('rCo2').textContent = Math.round(co2).toLocaleString('es-CO');
